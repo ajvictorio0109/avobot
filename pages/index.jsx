@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
 export default function SimpleChat() {
-  const [messages, setMessages] = useState<Array<{text: string, sender: string}>>([]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
 
   const handleSend = () => {
     if (input.trim()) {
-      // Add user message
       setMessages([...messages, { text: input, sender: 'user' }]);
       
-      // Simulate bot response (we'll customize this later!)
+      // Simulate bot response
       setTimeout(() => {
         setMessages(prev => [...prev, { 
           text: "Hello! I'm Team Avocado's training bot. How can I help you today?", 
